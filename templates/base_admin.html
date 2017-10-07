@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+            Базовый шаблон для админки
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% endblock %}
+    <meta charset="utf-8">
+</head>
+<body>
+<div>
+    {% block js %}
+        <script src="/static/js/jquery-2.1.4.min.js"></script>
+    {% endblock %}
+    <a href="/">На главную</a>
+    {#<div id="csrfmiddlewaretoken" style="display: none;">{% csrf_token %}</div>#}
+
+    <div>
+        <div>
+            {% block header %}
+                <div>
+                    <h1>Админка</h1>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+
+    <div>
+        {% block menu %}
+            / <a href="/users/" >пользователи </a>/
+        {% endblock %}
+    </div>
+
+    <div>
+        {% block content %}
+            base % context % template
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

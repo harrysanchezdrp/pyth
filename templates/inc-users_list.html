@@ -1,0 +1,6 @@
+{% for user in users %}
+    <li>{{ user }}
+        <button type="button" class="admbtn" onclick="fill_form({{ user.id }})"></button>
+        <a href="delete/user/{{ user.id }}" class="delbtn"></a>
+    </li>
+{% endfor %}

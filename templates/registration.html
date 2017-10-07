@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+	Registration
+{% endblock %}
+{% block mainform %}
+	<a href="/" class="returner">&#9668; To Main Page</a>
+	<form method="post" role="form" action="/user/registration/">
+            {% include 'inc-registration_form.html' %}
+    {# include 'inc-reg_form_as_table.html' #}
+	<input type="submit" value="Create the account">
+	</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+	Main Page
+{% endblock %}
+{% block indexcontent %}
+	<div class="header-row1">
+        <a href="/"><img src="/static/img/logo.png"></a>
+        <h2>FREE U.S. SHIPPING - NO MINIMUM</h2>
+        {% include 'inc-login_form.html' %}
+    </div>
+    <div class="header-row2">
+    	<ul class="menu">
+    		<li><a href=#>PRODUCTS</a>
+				<ul class="submenu">
+					<li><a href=#>Skateboards</a></li>
+					<li><a href=#>Details</a></li>
+					<li><a href=#>Shoes</a></li>
+				</ul>
+    		</li>
+    	</ul>
+    </div>
+    <div>
+    {% for place in product_place %}
+    	{{place.name}}
+    {% endfor %}
+    </div>
+{% endblock %}

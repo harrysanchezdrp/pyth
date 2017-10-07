@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+	<p class="auth_message">Authorized as {{user.username}}</p>
+	<a href="/user/logout/" class="blogout">Logout</a>
+{% else %}
+	{% if errors %}
+	<p class="p_error">Sorry, could not login as '{{username}}'</p>
+	{% endif %}
+	<form method="post" action="/user/login/">{% csrf_token %}
+		<input class="login_form" type="text" name="login" value="" placeholder="Login">
+		<input class="pass_form" type="password" name="password" value= "" placeholder="Password">
+		<input type="submit" value="Log in" class="btn">
+		<a href="/user/registration/" class="reg">Not yet registered? Sign Up</a>
+	</form>
+{% endif %}
